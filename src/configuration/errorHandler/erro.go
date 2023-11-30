@@ -18,7 +18,7 @@ func (r *Erro) Error() string {
 	return r.Message
 }
 
-func newErrorHandler(message, err string, code int, causes []Causes) *Erro {
+func NewErrorHandler(message, err string, code int, causes []Causes) *Erro {
 	return &Erro{
 		Message: message,
 		Err:     err,
@@ -27,7 +27,7 @@ func newErrorHandler(message, err string, code int, causes []Causes) *Erro {
 	}
 }
 
-func newBadRequestError(message string) *Erro {
+func NewBadRequestError(message string) *Erro {
 	return &Erro{
 		Message: message,
 		Err:     "bad_request",
@@ -35,7 +35,7 @@ func newBadRequestError(message string) *Erro {
 	}
 }
 
-func newBadRequestValidationError(message string, causes []Causes) *Erro {
+func NewBadRequestValidationError(message string, causes []Causes) *Erro {
 	return &Erro{
 		Message: message,
 		Err:     "bad_request",
@@ -44,7 +44,7 @@ func newBadRequestValidationError(message string, causes []Causes) *Erro {
 	}
 }
 
-func newInternalServerError(message string) *Erro {
+func NewInternalServerError(message string) *Erro {
 	return &Erro{
 		Message: message,
 		Err:     "internal_server_error",
